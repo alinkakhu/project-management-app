@@ -1,0 +1,21 @@
+<div class="flex-container">
+    <span class="spacer"></span>
+    <div>
+        <h3>Zaloguj</h3>
+        <form class="flex-column-container" (ngSubmit)="onSubmit()">
+            <span class="spacer"></span>
+            <mat-form-field>
+                <mat-label>Login:</mat-label>
+                <input matInput name="login" [(ngModel)]="login" required />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Hasło:</mat-label>
+                <input matInput name="password" type="password" [(ngModel)]="password" required />
+            </mat-form-field>
+            <div>
+                <button color="primary" mat-raised-button>Zaloguj</button>
+            </div>
+        </form>
+        <p style="word-wrap: break-word;">{{ token }}</p>
+    </div>
+</div>
