@@ -1,10 +1,14 @@
 <div class="flex-container">
     <span class="spacer"></span>
     <div>
-        <h3>Zaloguj</h3>
+        <h3>Zarejestruj</h3>
         <p *ngIf="message.isPresent()" class="{{ message.type }}">{{ message }}</p>
         <form class="flex-column-container" (ngSubmit)="onSubmit()">
             <span class="spacer"></span>
+            <mat-form-field>
+                <mat-label>Imię:</mat-label>
+                <input matInput name="name" [(ngModel)]="name" required />
+            </mat-form-field>
             <mat-form-field>
                 <mat-label>Login:</mat-label>
                 <input matInput name="login" [(ngModel)]="login" required />
@@ -14,7 +18,7 @@
                 <input matInput name="password" type="password" [(ngModel)]="password" required />
             </mat-form-field>
             <div>
-                <button color="primary" mat-raised-button>Zaloguj</button>
+                <button color="primary" mat-raised-button>Zarejestruj</button>
             </div>
         </form>
     </div>

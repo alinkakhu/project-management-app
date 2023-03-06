@@ -1,6 +1,13 @@
 <mat-toolbar color="primary">
     <button mat-button (click)="onHomeClick()">Project Manager</button>
     <span class="header-spacer"></span>
-    <app-button text="Zaloguj" icon="login" goto="login"></app-button>
-    <app-button text="Zarejestruj" icon="person_add" goto="register"></app-button>
+    <div *ngIf="auth.isLoggedIn(); then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <app-button text="Projekty" icon="dataset" goto="board-page"></app-button>
+        <app-button text="Wyloguj ({{ auth.getLogin() }})" icon="logout" goto="logout"></app-button>
+    </ng-template>
+    <ng-template #elseBlock>
+        <app-button text="Zaloguj" icon="login" goto="login"></app-button>
+        <app-button text="Zarejestruj" icon="person_add" goto="register"></app-button>
+    </ng-template>
 </mat-toolbar>
