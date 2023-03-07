@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { LogoutComponent } from './logout/logout.component';
 @NgModule({
     declarations: [
       AppComponent,
@@ -24,6 +25,7 @@ import { RegisterComponent } from './register/register.component';
       ButtonComponent,
       LoginComponent,
       RegisterComponent,
+      LogoutComponent,
     ],
     imports: [
       AppRoutingModule,

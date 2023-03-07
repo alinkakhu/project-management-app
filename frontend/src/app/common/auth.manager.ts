@@ -29,6 +29,11 @@ export class AuthManager {
         });
     }
 
+    logout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('login');
+        localStorage.removeItem('userId');
+    }
 
     isLoggedIn() {
         return !!localStorage.getItem('token');
