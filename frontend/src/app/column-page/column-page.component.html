@@ -1,0 +1,22 @@
+<h3>{{ board.title }}</h3>
+<p *ngIf="message.isPresent()" class="{{ message.type }}">{{ message }}</p>
+<input type="text" matInput [(ngModel)]="title" />
+<app-button text="Dodaj" icon="add" (click)="onCreate()"></app-button>
+<mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let column of columns | sortByOrder">
+        <mat-card>
+        <mat-card-header>
+            <span style="font-size: 10pt;">#{{ column.order }}</span>
+            <input type="text" matInput [(ngModel)]="column.title" />
+            <app-button icon="arrow_backward" (click)="onDecrementOrder(column)"></app-button>
+            <app-button icon="arrow_forward" (click)="onIncrementOrder(column)"></app-button>
+        </mat-card-header>
+        <mat-card-actions>
+            <app-button text="Dodaj zadanie" icon="add" goto="task-page/{{column._id}}"></app-button>
+            <app-button text="Aktualizuj" icon="mode_edit" (click)="onUpdate(column)"></app-button>
+            <app-button text="Usuń" icon="clear" (click)="onDelete(column)"></app-button>
+        </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+

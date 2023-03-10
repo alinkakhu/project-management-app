@@ -1,3 +1,5 @@
+import { AuthManager } from "./auth.manager";
+import { Config } from "./config";
 export class Api {
     static instance: Api;
     baseUrl: string;
